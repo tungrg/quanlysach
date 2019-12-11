@@ -10,6 +10,7 @@ public:
 	ListHoaDon KhachHoaDon;
 	void fThemSach() = delete;
 	void fXoaSach() = delete;
-	void fGhifileHoaDon();
+	void fMuaSach(KHOSACH &B);
+	void fCheckOut();
 };
 #endif

@@ -5,7 +5,7 @@ void ListHoaDon::fThemHoaDon(HoaDon& A)
 	DanhSach.push_back(A);
 }
 
-void ListHoaDon::fXuatHoaDon()
+void ListHoaDon::fXuatHoaDon(ListHoaDon& B)
 {
 	int sum = 0;
 	for (auto i = DanhSach.begin(); i != DanhSach.end(); i++)
@@ -16,10 +16,10 @@ void ListHoaDon::fXuatHoaDon()
 	cout << "Tong tien la: " << sum;
 }
 
-void ListHoaDon::fXoaHoaDon()
+void ListHoaDon::fXoaHoaDon(ListHoaDon& B)
 {
 	int dem = 0;
-	for (auto i = DanhSach.begin(); i != DanhSach.end(); i++)
+	for (auto i = B.DanhSach.begin(); i != B.DanhSach.end(); i++)
 	{
 		cout << dem;
 		(*i).fXuatHoaDon();
@@ -28,14 +28,14 @@ void ListHoaDon::fXoaHoaDon()
 	int x;
 	cout << "Nhap hoa don ban muon xoa: ";
 	cin >> x;
-	DanhSach.erase(DanhSach.begin() + x);
-	fGhiHoaDon();
+	B.DanhSach.erase(B.DanhSach.begin() + x);
+	fGhiHoaDon(B);
 }
 
-void ListHoaDon::fSuaHoaDon()
+void ListHoaDon::fSuaHoaDon(ListHoaDon& B)
 {
 	int dem = 0;
-	for (auto i = DanhSach.begin(); i != DanhSach.end(); i++)
+	for (auto i = B.DanhSach.begin(); i != B.DanhSach.end(); i++)
 	{
 		cout << dem;
 		(*i).fXuatHoaDon();
@@ -47,8 +47,8 @@ void ListHoaDon::fSuaHoaDon()
 	cout << "Nhap so luong sach ban muon thay doi: ";
 	int temp;
 	cin >> temp;
-	DanhSach[x].soLuong = temp;
-	fGhiHoaDon();
+	B.DanhSach[x].soLuong = temp;
+	fGhiHoaDon(B);
 }
 
 void ListHoaDon::fLoadHoaDon()
@@ -64,12 +64,13 @@ void ListHoaDon::fLoadHoaDon()
 	}
 }
 
-void ListHoaDon::fGhiHoaDon()
+void ListHoaDon::fGhiHoaDon(ListHoaDon& B)
 {
-	ofstream fileOut("./HoaDon/ListHoaDon.txt");
-	for (auto i = DanhSach.begin(); i != DanhSach.end(); i++)
+	ofstream fileOut("./HoaDon/ListHoaDon.txt", ofstream::out);
+	for (auto i = B.DanhSach.begin(); i != B.DanhSach.end(); i++)
 	{
 		fileOut << (*i).tenSach << endl;
 		fileOut << (*i).giaTien << " " << (*i).soLuong << endl;
 	}
+	fileOut.close();
 }

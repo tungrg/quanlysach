@@ -8,10 +8,10 @@ class ListHoaDon
 public:
 	vector <HoaDon> DanhSach;
 	void fThemHoaDon(HoaDon& A);
-	void fXuatHoaDon();
-	void fXoaHoaDon();
-	void fSuaHoaDon();
+	void fXuatHoaDon(ListHoaDon& B);
+	void fXoaHoaDon(ListHoaDon& B);
+	void fSuaHoaDon(ListHoaDon& B);
 	void fLoadHoaDon();
-	void fGhiHoaDon();
+	void fGhiHoaDon(ListHoaDon &B);
 };
 #endif

@@ -7,7 +7,7 @@ class KHOSACH
 {
 public:
 	vector <SACH> listSach;
-	void fThemSach(SACH& A);
+	void fThemSach(KHOSACH& B, SACH& A);
 	void fTimSach(KHOSACH& B);
 	void fXoaSach(KHOSACH& B);
 	void fSuaSach(KHOSACH& B);

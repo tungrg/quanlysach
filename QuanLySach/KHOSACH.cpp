@@ -1,8 +1,8 @@
 #include "KHOSACH.h"
 
-void KHOSACH::fThemSach(SACH& A)
+void KHOSACH::fThemSach(KHOSACH& B,SACH& A)
 {
-	listSach.push_back(A);
+	B.listSach.push_back(A);
 }
 void KHOSACH::fTimSach(KHOSACH& B)
 {
